@@ -1,0 +1,54 @@
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.modalContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  width: min-content;
+  height: min-content;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(220, 227, 229, 0.8);
+  background: #fff;
+  box-shadow: 0px 4px 57px 0px rgba(17, 17, 17, 0.05);
+  padding: 40px;
+}
+
+.exitButton {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  border: none;
+  background-color: #ffffff00;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border-radius: 5px;
+}
+
+.exitEmage {
+  width: 24px;
+  height: 24px;
+}
+
+.exitButton:hover,
+.exitButton:focus {
+  background-color: #0B44CD;
+}
+
+.exitButton:hover .exitEmage,
+.exitButton:focus .exitEmage {
+  color: #fff;
+}
