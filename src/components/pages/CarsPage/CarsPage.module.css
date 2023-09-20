@@ -1,0 +1,70 @@
+.carContainer {
+  width: 274px;
+}
+
+.imgContainer {
+  position: relative;
+  width: 274px;
+  height: 268px;
+  margin-bottom: 14px;
+  border-radius: 14px;
+  overflow: hidden;
+  background-color: var(--third-bg-color);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.toggleFavoritesBtn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+}
+
+.toggleFavoritesIcon:hover,
+.toggleFavoritesIcon:focus {
+  scale: 1.2;
+}
+
+.textContainer {
+  margin-bottom: 28px;
+}
+
+.topTextContainer {
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.bottomTextContainer {
+  display: flex;
+  flex-wrap: wrap;
+  color: var(--secondary-text-color);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.decorLine {
+  margin-left: 6px;
+  margin-right: 6px;
+  width: 1px;
+  height: 16px;
+  background-color: var(--third-bg-color);
+}
+
+.btnContainer {
+  width: 274px;
+  height: 44px;
+}
+
+.model {
+  color: var(--blue);
+}

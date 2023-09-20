@@ -1,16 +1,13 @@
+import { nanoid } from 'nanoid';
 import React from 'react';
 
-const Dropdawn = ({ variables, setVariant }) => {
+const Dropdawn = ({ variables, inputId }) => {
   return (
-    <ul>
+    <datalist id={inputId}>
       {variables.map(variant => (
-        <li>
-          <button type="button" onClick={() => setVariant(variant)}>
-            {variant}
-          </button>
-        </li>
+        <option value={variant} key={nanoid()} />
       ))}
-    </ul>
+    </datalist>
   );
 };
 

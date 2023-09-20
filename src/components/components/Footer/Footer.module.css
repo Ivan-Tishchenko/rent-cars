@@ -1,0 +1,46 @@
+.footer {
+  background-color: var(--bg-color);
+  border-top: 5px solid var(--blue);
+}
+
+.footerContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  height: 80px;
+}
+
+.logo {
+  font-family: var(--secondary-font-family);
+  font-size: 15px;
+}
+
+.logoLeft {
+  color: var(--blue);
+  font-weight: 900;
+  font-style: italic;
+}
+
+.logoCenter {
+  color: var(--blue);
+  font-weight: 900;
+}
+
+.logoRight {
+  color: var(--white);
+  font-weight: 900;
+}
+
+.rights {
+  font-size: 15px;
+  color: var(--blue);
+}
+
+.rightsText {
+  color: var(--white);
+}
+
+.rightsLink {
+  color: var(--blue);
+}

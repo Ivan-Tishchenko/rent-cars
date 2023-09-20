@@ -1,26 +1,25 @@
-import Modal from './components/Modal/Modal';
+import React from 'react';
+import { Navigate, Route, Routes } from 'react-router-dom';
 
-export const App = () => {
+import Layout from './Layout/Layout';
+import HomePage from './pages/HomePage/HomePage';
+import CarsPage from './pages/CarsPage/CarsPage';
+import Liked from './pages/Liked/Liked';
+import { FavoritesProvider } from '../context/FavoriteContex';
+
+const App = () => {
   return (
-    <>
-      <div
-        style={{
-          height: '100vh',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontSize: 40,
-          color: '#010101',
-        }}
-      >
-        React homework template
-      </div>
-      <Modal
-        children={null}
-        toggleModal={() => {
-          console.log('close');
-        }}
-      />
-    </>
+    <FavoritesProvider>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="/catalog" element={<CarsPage />} />
+          <Route path="/favorites" element={<Liked />} />
+          <Route path="/*" element={<Navigate to="/" />} />
+        </Route>
+      </Routes>
+    </FavoritesProvider>
   );
 };
+
+export default App;
