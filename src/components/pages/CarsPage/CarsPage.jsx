@@ -51,6 +51,38 @@ const CarsPage = () => {
 
   const { favoritesCars, setFavoritesCars } = useFavoritesContext();
 
+  const toggleFavorite = car => {
+    if (setFavoritesCars && favoritesCars) {
+      setFavoritesCars(prevFavorites => {
+        const isCarInFavorites = prevFavorites.some(
+          favoriteCar => favoriteCar.id === car.id
+        );
+
+        if (isCarInFavorites) {
+          const updatedFavorites = prevFavorites.filter(
+            favoriteCar => favoriteCar.id !== car.id
+          );
+
+          localStorage.setItem(
+            'favoritesCars',
+            JSON.stringify(updatedFavorites)
+          );
+
+          return updatedFavorites;
+        } else {
+          const updatedFavorites = [...prevFavorites, car];
+
+          localStorage.setItem(
+            'favoritesCars',
+            JSON.stringify(updatedFavorites)
+          );
+
+          return updatedFavorites;
+        }
+      });
+    }
+  };
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalData, setModalData] = useState('');
 
@@ -145,7 +177,7 @@ const CarsPage = () => {
                     <img src={img} alt="Car" />
                     <button
                       className={styles.toggleFavoritesBtn}
-                      // onClick={() => toggleFavorite(car)}
+                      onClick={() => toggleFavorite(car)}
                     >
                       {favoritesCars.some(
                         favoriteCar => favoriteCar.id === car.id
