@@ -116,9 +116,9 @@ const CarsList = ({
                   <p>{rentalPrice}</p>
                 </div>
                 <div className={styles.bottomTextContainer}>
-                  <span>{address.split(' ')[3].split(',')[0]}</span>
+                  <span>{address[1]}</span>
                   <div className={styles.decorLine}></div>
-                  <span>{address.split(' ')[4]}</span>
+                  <span>{address[2]}</span>
                   <div className={styles.decorLine}></div>
                   <span>{rentalCompany}</span>
                   <div className={styles.decorLine}></div>
@@ -136,10 +136,7 @@ const CarsList = ({
                   setModalData(obj);
                 }}
               >
-                <Button
-                  type={'button'}
-                  textContent={'Learn more'}
-                />
+                <Button type={'button'} textContent={'Learn more'} />
               </div>
             </div>
           </li>
