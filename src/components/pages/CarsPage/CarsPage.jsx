@@ -55,12 +55,12 @@ const CarsPage = () => {
     if (setFavoritesCars && favoritesCars) {
       setFavoritesCars(prevFavorites => {
         const isCarInFavorites = prevFavorites.some(
-          favoriteCar => favoriteCar.id === car.id
+          favoriteCar => favoriteCar?.id === car?.id
         );
 
         if (isCarInFavorites) {
           const updatedFavorites = prevFavorites.filter(
-            favoriteCar => favoriteCar.id !== car.id
+            favoriteCar => favoriteCar?.id !== car?.id
           );
 
           localStorage.setItem(
@@ -83,6 +83,16 @@ const CarsPage = () => {
     }
   };
 
+  useEffect(() => {
+    const storedFavoritesCars = JSON.parse(
+      localStorage.getItem('favoritesCars')
+    );
+
+    if (storedFavoritesCars) {
+      setFavoritesCars(storedFavoritesCars);
+    }
+  }, [setFavoritesCars]);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalData, setModalData] = useState('');
 
@@ -94,7 +104,6 @@ const CarsPage = () => {
     getCars(1).then(data => setCars(data ?? []));
   }, []);
 
-  console.log(cars);
   return (
     <>
       {isModalOpen && <Modal toggleModal={toggleModal} car={modalData} />}
@@ -167,7 +176,6 @@ const CarsPage = () => {
               type,
               rentalPrice,
               rentalCompany,
-              car,
             } = obj;
 
             return (
@@ -177,10 +185,12 @@ const CarsPage = () => {
                     <img src={img} alt="Car" />
                     <button
                       className={styles.toggleFavoritesBtn}
-                      onClick={() => toggleFavorite(car)}
+                      onClick={() => {
+                        toggleFavorite(obj);
+                      }}
                     >
                       {favoritesCars.some(
-                        favoriteCar => favoriteCar.id === car.id
+                        favoriteCar => favoriteCar.id === obj.id
                       ) ? (
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
