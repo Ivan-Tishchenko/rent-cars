@@ -1,3 +1,14 @@
 .container {
   padding: 128px 150px;
 }
+
+.buttonLoadMore {
+  color: #3470ff;
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  text-decoration-line: underline;
+  margin-top: 100px;
+}

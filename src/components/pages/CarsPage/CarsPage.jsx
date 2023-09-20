@@ -8,20 +8,18 @@ import Modal from 'components/components/Modal/Modal';
 import CarsList from 'components/components/CarsList/CarsList';
 import FilterForm from 'components/FilterForm/FilterForm';
 
-
-
 const CarsPage = () => {
-   const [filters, setFilters] = useState({
-     selectedBrand: '',
-     selectedPrice: '',
-     mileageFrom: '',
-     mileageTo: '',
-   });
+  const [filters, setFilters] = useState({
+    selectedBrand: '',
+    selectedPrice: '',
+    mileageFrom: '',
+    mileageTo: '',
+  });
 
-   const handleFilterChange = newFilters => {
-     setFilters(newFilters);
+  const handleFilterChange = newFilters => {
+    setFilters(newFilters);
   };
-  
+
   const [page, setPage] = useState(1);
 
   const [cars, setCars] = useState([]);
@@ -67,6 +65,7 @@ const CarsPage = () => {
         {canLoadMore && (
           <button
             type="button"
+            className={styles.buttonLoadMore}
             onClick={() => {
               getCars(page + 1).then(data => {
                 setCars([...cars, ...data]);
