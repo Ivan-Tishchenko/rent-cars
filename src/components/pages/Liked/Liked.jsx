@@ -3,6 +3,7 @@ import { useFavoritesContext } from 'context/FavoriteContex';
 import React, { useEffect, useState } from 'react';
 import styles from './Liked.module.css';
 import Modal from 'components/components/Modal/Modal';
+import FilterForm from 'components/FilterForm/FilterForm';
 
 const Liked = () => {
   const { favoritesCars, setFavoritesCars } = useFavoritesContext();
@@ -14,16 +15,16 @@ const Liked = () => {
     setIsModalOpen(prevState => !prevState);
   };
 
-  // const [filters, setFilters] = useState({
-  //   selectedBrand: '',
-  //   selectedPrice: '',
-  //   mileageFrom: '',
-  //   mileageTo: '',
-  // });
+  const [filters, setFilters] = useState({
+    selectedBrand: '',
+    selectedPrice: '',
+    mileageFrom: '',
+    mileageTo: '',
+  });
 
-  // const handleFilterChange = newFilters => {
-  //   setFilters(newFilters);
-  // };
+  const handleFilterChange = newFilters => {
+    setFilters(newFilters);
+  };
 
   useEffect(() => {
     const storedFavoritesCars = JSON.parse(
@@ -39,9 +40,9 @@ const Liked = () => {
     <main className={`${styles.favorites} container`}>
       {isModalOpen && <Modal car={modalData} />}
       <>
-        {/* {favoritesCars.length !== 0 && (
-            <FilterForm onFilter={handleFilterChange} />
-          )} */}
+        {favoritesCars.length !== 0 && (
+          <FilterForm onFilter={handleFilterChange} />
+        )}
         {favoritesCars.length === 0 && (
           <>
             <div className={styles.infoTextTop}>
@@ -59,6 +60,7 @@ const Liked = () => {
           setModalData={setModalData}
           favoritesCars={favoritesCars}
           toggleModal={toggleModal}
+          filters={filters}
         />
       </>
     </main>

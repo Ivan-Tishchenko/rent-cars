@@ -1,0 +1,266 @@
+.form {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 18px;
+}
+
+.brandInputContainer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.label {
+  margin-bottom: 8px;
+  color: var(--fourth-text-color);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.29;
+}
+
+.brandInput {
+  width: 224px;
+  height: 48px;
+  padding: 14px 89px 14px 18px;
+  border-radius: 14px;
+  background: var(--second-bg-color);
+  color: var(--main-text-color);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.11;
+}
+
+.brandInput::placeholder {
+  color: var(--main-text-color);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.11;
+}
+
+.brandInputBtn {
+  position: relative;
+}
+
+.brandBtnIcon {
+  position: absolute;
+  bottom: 13px;
+  right: 18px;
+}
+
+.priceInputContainer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  position: relative;
+}
+
+.priceTextTo {
+  position: absolute;
+  top: 40.5px;
+  left: 18px;
+  color: var(--main-text-color);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.11;
+}
+
+.priceInput {
+  width: 125px;
+  height: 48px;
+  padding: 14px 18px 14px 47px;
+  border-radius: 14px;
+  background: var(--second-bg-color);
+  color: var(--main-text-color);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.11;
+}
+
+.priceInput::placeholder {
+  color: var(--main-text-color);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.11;
+}
+
+.priceInputBtn {
+  position: relative;
+}
+
+.priceBtnIcon {
+  position: absolute;
+  bottom: 13px;
+  right: 18px;
+}
+
+.mileAgeContainer {
+  display: flex;
+  align-items: flex-end;
+  color: var(--main-text-color);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.11;
+}
+
+.fromInputContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.mileageFromInput {
+  width: 160px;
+  height: 48px;
+  padding: 14px 14px 14px 75px;
+  border-radius: 14px 0px 0px 14px;
+  border-right: 1px solid rgba(138, 138, 137, 0.2);
+  background: var(--second-bg-color);
+  color: var(--main-text-color);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.11;
+}
+
+.textFrom {
+  position: absolute;
+  top: 40.5px;
+  left: 24px;
+}
+
+.toInputContainer {
+  position: relative;
+}
+
+.mileageToInput {
+  width: 160px;
+  height: 48px;
+  padding: 14px 14px 14px 53px;
+  border-radius: 0px 14px 14px 0px;
+  background: var(--second-bg-color);
+  color: var(--main-text-color);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.11;
+}
+
+.textTo {
+  position: absolute;
+  top: 14.5px;
+  left: 24px;
+}
+
+.searchBtnContainer {
+  height: 48px;
+  width: 136px;
+}
+
+.brandFilterContainer {
+  padding: 14px 8px 14px 18px;
+  position: absolute;
+  top: 80px;
+  z-index: 2;
+  width: 224px;
+  height: 272px;
+  border-radius: 14px;
+  border: 1px solid var(--third-bg-color);
+  background-color: var(--modal-bg-color);
+  overflow: hidden;
+}
+
+.brandFilter {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: var(--third-bg-color) var(--white);
+}
+
+.brandFilter::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 10px;
+}
+
+.brandFilter::-webkit-scrollbar-thumb {
+  background-color: var(--third-bg-color);
+  border-radius: 10px;
+}
+
+.brandFilter::-webkit-scrollbar-track {
+  background-color: var(--white);
+  border-radius: 10px;
+}
+
+.brandList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.brandItem {
+  color: var(--six-text-color);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  cursor: pointer;
+}
+
+.brandItem:hover,
+.brandItem:focus {
+  color: var(--main-text-color);
+}
+
+.priceFilterContainer {
+  position: absolute;
+  width: 125px;
+  height: 188px;
+  padding: 14px 8px 14px 18px;
+  border-radius: 14px;
+  border: 1px solid var(--third-bg-color);
+  top: 80px;
+  z-index: 2;
+  background-color: var(--modal-bg-color);
+}
+
+.priceFilter {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: var(--third-bg-color) var(--white);
+}
+
+.priceFilter::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 10px;
+}
+
+.priceFilter::-webkit-scrollbar-thumb {
+  background-color: var(--third-bg-color);
+  border-radius: 10px;
+}
+
+.priceFilter::-webkit-scrollbar-track {
+  background-color: var(--white);
+  border-radius: 10px;
+}
+
+.priceList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.priceItem {
+  color: var(--six-text-color);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.priceItem:hover,
+.priceItem:focus {
+  color: var(--main-text-color);
+}

@@ -136,7 +136,10 @@ const CarsList = ({
                   setModalData(obj);
                 }}
               >
-                <Button type={'button'} textContent={'Learn more'} />
+                <Button
+                  type={'button'}
+                  textContent={'Learn more'}
+                />
               </div>
             </div>
           </li>
